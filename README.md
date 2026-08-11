@@ -262,7 +262,7 @@ GitHub:
 https://github.com/LakshyaSoni19
 
 LinkedIn:
-https://www.linkedin.com/in/lakshya-soni-736742285/
+https://www.linkedin.com/in/lakshya-soni-b283a2280/
 
 ---
 
