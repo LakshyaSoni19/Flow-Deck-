@@ -1,0 +1,16 @@
+import { useState } from 'react'
+import Button from '../common/Button'
+import FormLayout from '../common/FormLayout'
+import Input from '../common/Input'
+import LookupSelect from '../common/LookupSelect'
+import { lookupService } from '../../services/lookupService'
+import { hasErrors, validateRegistration } from '../../utils/validators'
+import styles from './RegistrationForm.module.css'
+
+const initialValues = { firstName: '', lastName: '', email: '', password: '', mobile: '', gender: '', dob: '', address: '', cityId: '', departmentId: '', designationId: '' }
+function RegistrationForm({ submitLabel, isSubmitting, onSubmit }) {
+  const [values, setValues] = useState(initialValues); const [errors, setErrors] = useState({}); const update = (event) => setValues((current) => ({ ...current, [event.target.name]: event.target.value })); const select = (field) => (value) => setValues((current) => ({ ...current, [field]: value }))
+  const submit = (event) => { event.preventDefault(); const next = validateRegistration(values); setErrors(next); if (!hasErrors(next)) onSubmit({ ...values, cityId: Number(values.cityId), departmentId: Number(values.departmentId), designationId: Number(values.designationId) }, setErrors) }
+  return <FormLayout onSubmit={submit} noValidate><div className={styles.grid}><Input id="firstName" name="firstName" label="First name" value={values.firstName} onChange={update} error={errors.firstName} /><Input id="lastName" name="lastName" label="Last name" value={values.lastName} onChange={update} error={errors.lastName} /></div><Input id="email" name="email" type="email" label="Email" value={values.email} onChange={update} error={errors.email} /><Input id="password" name="password" type="password" label="Password" value={values.password} onChange={update} error={errors.password} /><div className={styles.grid}><Input id="mobile" name="mobile" inputMode="numeric" label="Mobile" value={values.mobile} onChange={update} error={errors.mobile} /><div className={styles.selectField}><label htmlFor="gender">Gender</label><select id="gender" name="gender" value={values.gender} onChange={update}><option value="">Select gender</option><option value="Male">Male</option><option value="Female">Female</option><option value="Other">Other</option></select>{errors.gender && <span>{errors.gender}</span>}</div></div><Input id="dob" name="dob" type="date" label="Date of birth" value={values.dob} onChange={update} error={errors.dob} /><Input id="address" name="address" label="Address" value={values.address} onChange={update} error={errors.address} /><div className={styles.grid}><LookupSelect id="cityId" label="City" value={values.cityId} onChange={select('cityId')} loadOptions={lookupService.getCities} error={errors.cityId} /><LookupSelect id="departmentId" label="Department" value={values.departmentId} onChange={select('departmentId')} loadOptions={lookupService.getDepartments} error={errors.departmentId} /></div><LookupSelect id="designationId" label="Designation" value={values.designationId} onChange={select('designationId')} loadOptions={lookupService.getDesignations} error={errors.designationId} /><Button type="submit" isLoading={isSubmitting}>{submitLabel}</Button></FormLayout>
+}
+export default RegistrationForm

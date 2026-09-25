@@ -1,0 +1,1 @@
+.pageContainer { width: min(100%, 90rem); margin: 0 auto; padding: var(--space-6); }.form { display: grid; gap: var(--space-4); }.dataTable { display: grid; gap: var(--space-4); }.loadingOverlay { position: fixed; z-index: 900; inset: 0; display: grid; place-items: center; background: rgba(247, 249, 251, 0.72); }

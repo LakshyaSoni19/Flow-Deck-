@@ -1,0 +1,70 @@
+.toolbar {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: end;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-xs);
+}
+
+.sortControl {
+  display: grid;
+  gap: 0.375rem;
+}
+
+.sortControl label {
+  color: var(--color-text-secondary);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.sortControl select {
+  min-height: 2.5rem;
+  padding: 0.5rem 0.875rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.sortControl select:focus {
+  border-color: var(--color-primary);
+  outline: 2px solid var(--color-primary-light);
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  padding: 3.5rem 1rem;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.deleteBtn {
+  color: var(--color-danger) !important;
+}
+
+.deleteBtn:hover {
+  background: var(--color-danger-light) !important;
+}
+
+@media (max-width: 720px) {
+  .toolbar {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+}

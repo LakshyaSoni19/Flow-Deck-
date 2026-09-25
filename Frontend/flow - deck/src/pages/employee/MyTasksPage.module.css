@@ -1,0 +1,173 @@
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.75rem;
+  overflow-x: auto;
+}
+
+.tabButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.tabButton:hover {
+  background: var(--color-surface-hover);
+  color: var(--color-text-primary);
+}
+
+.activeTab {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border-color: rgba(15, 118, 110, 0.2);
+  font-weight: 700;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-xs);
+}
+
+.searchWrapper {
+  flex: 1 1 220px;
+}
+
+.control {
+  display: grid;
+  gap: 0.375rem;
+}
+
+.control label {
+  color: var(--color-text-secondary);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.control select {
+  min-height: 2.5rem;
+  padding: 0.5rem 0.875rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.control select:focus {
+  border-color: var(--color-primary);
+  outline: 2px solid var(--color-primary-light);
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  padding: 3.5rem 1rem;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.taskDetailsLayout {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+}
+
+.detailsGrid dt {
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.detailsGrid dd {
+  margin: 0.25rem 0 0;
+  word-break: break-word;
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.statusForm {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.radioGroup {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.radioOption {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.125rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  background: var(--color-surface);
+  transition: all var(--transition-fast);
+}
+
+.radioOption:hover {
+  border-color: var(--color-primary);
+  background: var(--color-surface-hover);
+}
+
+.radioOptionSelected {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+  font-weight: 700;
+}
+
+.radioOption input[type='radio'] {
+  accent-color: var(--color-primary);
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+@media (max-width: 680px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .detailsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+

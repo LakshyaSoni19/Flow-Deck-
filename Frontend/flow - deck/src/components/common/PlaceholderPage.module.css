@@ -1,0 +1,21 @@
+.page {
+  padding: 2rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  color: #0f766e;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.page h1 {
+  margin: 0 0 0.75rem;
+  color: #172033;
+  font-size: 1.75rem;
+}
+
+.page p:last-child {
+  color: #5f6b7a;
+}

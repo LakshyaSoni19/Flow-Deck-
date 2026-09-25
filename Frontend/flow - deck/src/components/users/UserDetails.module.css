@@ -1,0 +1,65 @@
+.detailsHero {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.avatarLarge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.avatarImg {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.heroMeta h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 0;
+}
+
+.grid dt {
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.grid dd {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-weight: 600;
+  font-size: 0.875rem;
+  word-break: break-word;
+}
+
+@media (max-width: 560px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+

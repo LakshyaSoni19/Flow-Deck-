@@ -1,0 +1,24 @@
+.layout {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 2rem;
+  background: #f4f7f8;
+}
+
+.brand {
+  position: fixed;
+  top: 1.5rem;
+  left: 2rem;
+  color: #172033;
+  font-size: 1.125rem;
+  font-weight: 800;
+}
+
+.content {
+  width: min(100%, 38rem);
+  background: #ffffff;
+  border: 1px solid #dce2e8;
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(23, 32, 51, 0.08);
+}

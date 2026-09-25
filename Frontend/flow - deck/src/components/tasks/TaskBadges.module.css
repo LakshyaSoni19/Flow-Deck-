@@ -1,0 +1,50 @@
+.status,
+.priority {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-xs);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.statusCompleted {
+  background: rgba(22, 163, 74, 0.1);
+  color: #16a34a;
+}
+
+.statusInProgress {
+  background: rgba(15, 118, 110, 0.1);
+  color: #0f766e;
+}
+
+.statusPending {
+  background: rgba(217, 119, 6, 0.1);
+  color: #d97706;
+}
+
+.statusOverdue {
+  background: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+}
+
+.statusDefault {
+  background: rgba(100, 116, 139, 0.1);
+  color: #64748b;
+}
+
+.priorityHigh {
+  background: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+}
+
+.priorityMedium {
+  background: rgba(217, 119, 6, 0.1);
+  color: #d97706;
+}
+
+.priorityLow {
+  background: rgba(100, 116, 139, 0.1);
+  color: #64748b;
+}
+
